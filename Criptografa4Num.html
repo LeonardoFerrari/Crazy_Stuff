@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Primeiro programa em JavaScript</title>
+
+<script type = "text/javascript">
+var num, num1, num2, num3, num4, aux;
+
+	num = window.prompt("Digite um num de 4 digitos: " );
+	document.writeln("<h1>Número: " + num + "</h1>");
+	
+	//quebra numero
+	num1 = parseInt((num/1000)%10);
+	num2 = parseInt((num/100)%10);
+	num3 = parseInt((num/10)%10);
+	num4 = parseInt(num%10);
+	
+	//criptografa
+	num1 = (num1 + 7)%10;
+	num2 = (num2 + 7)%10;
+	num3 = (num3 + 7)%10;
+	num4 = (num4 + 7)%10;
+	
+	//embaralha
+	aux = num1;
+	num1 = num3;
+	num3 = aux;
+	
+	aux = num2;
+	num2 = num4;
+	num4 = aux;
+	
+	document.writeln("<h2>Criptografado: " + num1 + num2 + num3 + num4 + "</h2>");
+	
+	//desembaralha
+	aux = num1;
+	num1 = num3;
+	num3 = aux;
+	
+	aux = num2;
+	num2 = num4;
+	num4 = aux;
+	
+	//descriptografa
+	num1 = parseInt((num1 + 3)%10);
+	num2 = parseInt((num2 + 3)%10);
+	num3 = parseInt((num3 + 3)%10);
+	num4 = parseInt((num4 + 3)%10);
+	
+	document.writeln("<h2>Descriptografado: " + num1 + num2 + num3 + num4 + "</h2>");
+	
+	//reconstitui numero
+	num = "" + num1 +  num2 + num3 + num4 + "";	
+	document.writeln("<h1>Número: " + num + "</h1>");
+	
+
+</script>
+
+</head>
+<body> 
+</body>
+</html>
