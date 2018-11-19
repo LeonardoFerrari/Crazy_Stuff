@@ -1,0 +1,55 @@
+<html>
+<head>
+<title style align="center"> Testando uns negócios de javaScript </title>
+<script type = "text/javascript">
+    
+    var nums = new Array(5);  
+    var result = new Array(5);  
+    var i;
+      
+    for(i = 0; i < 5; i++){
+    nums[i] = window.prompt("Digite um numero");
+    result[i] = parseInt(nums[i]);
+    }
+    var aux;
+
+
+    for (var i = 0; i < result.length; i++) { 
+        for (var j = 0; j < (result.length - i - 1); j++) { 
+            //Compara as posições adjacentes
+            if(result[j] > result[j+1]) {
+                //Swap the numbers
+                aux = result[j];  //Temporary variable to hold the current number
+                result[j] = result[j+1]; //Replace current number with adjacent number
+                result[j+1] = aux; //Replace adjacent number with current number
+            }
+        }        
+    }
+    for(i = 0; i < result.length; i++){
+        if(result[i] > result[i+1]){
+            aux = result[i];
+            result[i] = result[i+1];
+            result[i+1] = aux;
+        }                                          
+    }
+    for(i = 1; i < result.length+1; i++)
+    document.writeln("<h"+i+"> Numero "+result[i-1]+" de posição "+i+"</h"+i+">");
+        
+    
+//Utilizar bubble sort em arrays de pouco tamanho para ordenar
+    /*function ordena(result){
+        var aux;
+        for(i = 0; i < result.length-1 ; i++){
+            if(result[i] > result[i+1]){
+                aux = result[i];
+                result[i] = result[i+1];
+                result[i+1] = aux
+            }                                          
+        }
+    }*/
+        </script>
+</head>
+<body>
+    <section></section>
+</body>
+</html>
