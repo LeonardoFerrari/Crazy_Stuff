@@ -18,10 +18,10 @@
         for (var j = 0; j < (result.length - i - 1); j++) { 
             //Compara as posições adjacentes
             if(result[j] > result[j+1]) {
-                //Swap the numbers
-                aux = result[j];  //Temporary variable to hold the current number
-                result[j] = result[j+1]; //Replace current number with adjacent number
-                result[j+1] = aux; //Replace adjacent number with current number
+                //Troca os valores
+                aux = result[j];  //Auxiliar para guardar o resultado temporário
+                result[j] = result[j+1]; //Atualiza o índice atual com o próximo valor(adjacente)
+                result[j+1] = aux; //Atualiza o adjacente com o valor temporário
             }
         }        
     }
