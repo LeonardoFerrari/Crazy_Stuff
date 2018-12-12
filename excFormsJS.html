@@ -42,6 +42,40 @@
         max-width: 500px;
     }
 </style>
+<script language="Javascript">
+    
+        function validarFormulario(){
+            //Validação do nome
+            var x=document.forms["form"]["fnome"].value;
+            if(x==null || x==""){
+                alert("É necessario preencher com o nome");
+                return false;
+            }else{
+                return true;
+            }
+            //Validação do sexo
+            if (document.form.genero[0].checked == false 
+                && document.form.genero[1].checked == false) {
+                alert('Por favor, selecione o sexo.');
+            return false;
+            }
+            else
+            return true;        
+
+        //Validação estado civil
+            
+        /*Validação dos bens
+        if (form.bens.checked == false )
+        {
+         alert('Você deve selecionar algum bem que roubou');
+            return false;
+        }else
+            return true;
+        
+    }*/
+        
+    }
+    </script>
 </head>
 <body>
 <form name="form" onsubmit="return validarFormulario()" method="POST"> 
@@ -49,11 +83,11 @@
  
         <p class="letrinha">
             <label for="nome">Nome</label>
-            <input type="text" id="nomeid" placeholder="Nome inteiro" required="required" name="nome" />
+            <input type="text" id="nomeid" placeholder="Nome inteiro" name="fnome" />
         </p>
         <p>
             <label for="estado">Estado Civil:
-            <select id="estado" required="required" name="estado" class="required">
+            <select id="estado" name="estado" class="required">
                 <option value="">Escolha uma opção</option>
                 <option value="solteiro">Solteiro</option>
                 <option value="casado">Casado</option>
@@ -69,7 +103,7 @@
         </p>
         <p>
             <label for="email">Email</label>
-            <input type="email" id="emailid" placeholder="email@mail.com" required="required" name="email" />
+            <input type="text" id="emailid" placeholder="email@mail.com" name="email" />
             
         </p>
         <p>
@@ -84,74 +118,7 @@
  
     
     </form>
-    <script language="Javascript">
-            /*function validarEmail(id){
-                    if($(id).value.indexOf("@") < 1 || $(id).value.indexOf(".") == -1){
-                        return false;
-                    }else{
-                        return true;
-                    }
-            }
-            function validarNome(){
-                var x=document.forms["form"]["frame"].value;
-                if(x==null || x==""){
-                    alert("Eh necessario preencher com o nome");
-                    return false;
-                }else{
-                    return true;
-                }
-            }*/
-                function validarFormulario(form){
-                    //Validação do nome
-                    var x=document.forms["form"]["frame"].value;
-                    if(x==null || x==""){
-                        alert("Eh necessario preencher com o nome");
-                        return false;
-                    }else{
-                        return true;
-                    }
-                    //Validação do email
-                    if($(id).value.indexOf("@") < 1 || $(id).value.indexOf(".") == -1){
-                        return false;
-                    }else{
-                        return true;
-                    }
-                    //Validação do sexo
-                    
-                    var sex = document.forms.form;
-                    if(sex.genero[0].checked == false)
-                    {
-                        window.alert("Você deve selecionar o sexo");
-                        return false;
-                    }
-            
-            
-                //Validação estado civil
-                    
-                /*Validação dos bens
-                if (form.bens.checked == false )
-                {
-                 alert('Você deve selecionar algum bem que roubou');
-                    return false;
-                }else
-                    return true;
-                
-            }*/
-                if(form.estado.selectedIndex==0){
-                        alert("Seleciona o seu estado civil");
-                        return false;
-                    }
-                /*$('#estado').change(function(){
-                   var value = $(this).val();
-                      if(value == ''){
-                        alert('Escolha um estado civil');        
-                    }
-                });*/
-            }
-            </script>
+    
     </body>
     </html>
     
-
-    
-
